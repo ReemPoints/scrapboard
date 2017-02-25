@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<div class="uploadLink"><%= link_to 'New Picture', new_picture_path %></div>
+
+<% @pictures.each do |picture| %>
+    <%= image_tag picture.filename, width: 200, height: 200, style: "position: absolute; top: #{picture.y}px;   left: #{picture.x}px;", "data-url": picture_path(picture) %>            
+<% end %>
+
+
